@@ -1,0 +1,69 @@
+import prisma from "@/lib/prisma";
+import { Navbar } from "@/components/organisms/navbar";
+import { Sidebar } from "@/components/organisms/sidebar";
+import { CartDrawer } from "@/components/organisms/cart-drawer";
+import { WishlistDrawer } from "@/components/organisms/wishlist-drawer";
+import { SearchModal } from "@/components/organisms/search-modal";
+import { BackToTop } from "@/components/molecules/back-to-top";
+import { ProductGridSection } from "@/components/organisms/product-grid-section";
+import dynamicNext from "next/dynamic";
+
+const Footer = dynamicNext(
+  () => import("@/components/organisms/footer").then((mod) => mod.Footer),
+  { ssr: true },
+);
+
+export const dynamic = "force-dynamic";
+
+export const metadata = {
+  title: "Shop All Gadgets | GADGETS BD",
+  description:
+    "Browse our complete collection of smartphones, laptops, and premium gadgets.",
+};
+
+export default async function ShopPage() {
+  const dbProducts = await prisma.product.findMany({
+    orderBy: { name: "asc" },
+  });
+
+  const products = dbProducts.map((p) => ({
+    id: p.id,
+    title: p.name,
+    description: `${p.category} product from ${p.company}`,
+    price: p.sellingPrice,
+    oldPrice: p.sellingPrice * 1.1,
+    discount: p.discount || 0,
+    rating: "4.5",
+    reviews: 10,
+    image:
+      p.image ||
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80",
+    category: p.category,
+    brand: p.brand || p.company,
+    isNew: p.isNew ?? false,
+    stock: p.stock,
+    delivery: "Free Delivery in Bangladesh",
+  }));
+
+  return (
+    <div className="flex min-h-screen flex-col bg-background">
+      <Navbar />
+      <Sidebar />
+      <CartDrawer />
+      <WishlistDrawer />
+      <SearchModal />
+      <BackToTop />
+
+      <main className="flex-1 pt-24 md:pt-36 pb-16">
+        <ProductGridSection
+          title="All Products"
+          subtitle="Explore our full catalog of premium gadgets and accessories."
+          products={products}
+          limit={100}
+        />
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
