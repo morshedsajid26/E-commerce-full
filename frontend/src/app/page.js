@@ -1,8 +1,6 @@
-import { HeroSection } from "@/components/organisms/hero/hero-section";
-import { FeaturedCategories } from "@/components/organisms/featured-categories";
-import { ProductGridSection } from "@/components/organisms/product-grid-section";
 import prisma from "@/lib/prisma";
 import dynamic from "next/dynamic";
+import { DUMMY_PRODUCTS } from "@/data/dummy/homepage-data";
 
 import { Navbar } from "@/components/organisms/navbar";
 import { Sidebar } from "@/components/organisms/sidebar";
@@ -10,118 +8,158 @@ import { CartDrawer } from "@/components/organisms/cart-drawer";
 import { WishlistDrawer } from "@/components/organisms/wishlist-drawer";
 import { SearchModal } from "@/components/organisms/search-modal";
 import { BackToTop } from "@/components/molecules/back-to-top";
+import { TickerNotice } from "@/components/organisms/ticker-notice";
+import { HeroSection } from "@/components/organisms/hero/hero-section";
+import { QuickServices } from "@/components/organisms/quick-services";
+import { FeaturedCategories } from "@/components/organisms/featured-categories";
+import { FlashSale } from "@/components/organisms/flash-sale";
+import { ProductGridSection } from "@/components/organisms/product-grid-section";
+import { PcBuilderBanner } from "@/components/organisms/pc-builder-banner";
+import { BrandShowcase } from "@/components/organisms/brand-showcase";
 
-const FlashSale = dynamic(
-  () =>
-    import("@/components/organisms/flash-sale").then((mod) => mod.FlashSale),
-  { ssr: true },
-);
 const WhyChooseUs = dynamic(
   () =>
     import("@/components/organisms/why-choose-us").then(
-      (mod) => mod.WhyChooseUs,
+      (mod) => mod.WhyChooseUs
     ),
-  { ssr: true },
+  { ssr: true }
 );
-const Testimonials = dynamic(
-  () =>
-    import("@/components/organisms/testimonials").then(
-      (mod) => mod.Testimonials,
-    ),
-  { ssr: true },
-);
-const Newsletter = dynamic(
-  () =>
-    import("@/components/organisms/newsletter").then((mod) => mod.Newsletter),
-  { ssr: true },
-);
+
 const Footer = dynamic(
   () => import("@/components/organisms/footer").then((mod) => mod.Footer),
-  { ssr: true },
+  { ssr: true }
 );
 
 export default async function Home() {
-  const dbProducts = await prisma.product.findMany({
-    orderBy: { createdAt: "desc" },
-    take: 50,
-  });
+  let dbProducts = [];
+  try {
+    dbProducts = await prisma.product.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 50,
+    });
+  } catch (error) {
+    // Graceful fallback to dummy hardware inventory
+    dbProducts = [];
+  }
 
-  const products = dbProducts.map((p) => ({
+  const mappedDbProducts = (dbProducts || []).map((p) => ({
     id: p.id,
     title: p.name,
     description: `${p.category} product from ${p.company}`,
     price: p.sellingPrice,
-    oldPrice: p.sellingPrice * 1.1,
-    discount: p.discount || 0,
-    rating: "4.5",
-    reviews: 10,
+    oldPrice: Math.round(p.sellingPrice * 1.08),
+    discount: p.discount || 8,
+    rating: "4.8",
+    reviews: 24,
     image:
       p.image ||
-      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80",
+      "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80",
     category: p.category,
     brand: p.brand || p.company,
-    isNew: p.isNew ?? false,
-    stock: p.stock,
-    delivery: "Free Delivery in Bangladesh",
+    inStock: (p.stock ?? 10) > 0,
+    stock: p.stock ?? 10,
+    specs: [
+      "100% Genuine BD Warranty",
+      "High Speed Performance",
+      "Official Distributor Unit",
+    ],
   }));
 
+  // Combine with rich dummy data if DB has few or no records
+  const allProducts =
+    mappedDbProducts.length > 5 ? mappedDbProducts : DUMMY_PRODUCTS;
+
+  // Curated collections
+  const laptopProducts = allProducts.filter(
+    (p) =>
+      p.category?.toLowerCase() === "laptops" ||
+      p.category?.toLowerCase() === "laptop" ||
+      p.title?.toLowerCase().includes("macbook") ||
+      p.title?.toLowerCase().includes("razer blade")
+  );
+
+  const componentProducts = allProducts.filter(
+    (p) =>
+      p.category?.toLowerCase() === "components" ||
+      p.category?.toLowerCase() === "storage" ||
+      p.title?.toLowerCase().includes("rtx") ||
+      p.title?.toLowerCase().includes("ssd") ||
+      p.title?.toLowerCase().includes("ddr5")
+  );
+
+  const monitorProducts = allProducts.filter(
+    (p) =>
+      p.category?.toLowerCase() === "monitors" ||
+      p.title?.toLowerCase().includes("monitor")
+  );
+
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-slate-50/50 dark:bg-background">
       <Navbar />
 
-      {/* Global Navigation Overlays */}
+      {/* Overlays */}
       <Sidebar />
       <CartDrawer />
       <WishlistDrawer />
       <SearchModal />
       <BackToTop />
 
-      <main className="flex-1 pt-24 md:pt-36">
+      {/* Main Page Content - accounting for top fixed header height */}
+      <main className="flex-1 pt-14 sm:pt-16 lg:pt-24">
+        {/* Gadget Land BD News Ticker / Marquee Updates */}
+        <TickerNotice />
+
+        {/* Gadget Land BD 3-Column Hero Section */}
         <HeroSection />
 
+        {/* 5 Quick Utility Feature Boxes */}
+        <QuickServices />
+
+        {/* Featured Hardware Categories Grid */}
         <FeaturedCategories />
 
-        {/* Reusing ProductGridSection for various categories */}
+        {/* Gadget Land BD Deal of the Day / Flash Sale */}
+        <FlashSale products={allProducts.slice(0, 4)} />
+
+        {/* Curated Product Section 1: PC Components & Hardware */}
         <ProductGridSection
-          title="Featured Products"
-          subtitle="Handpicked premium selections."
-          products={products}
-          viewAllLink="/shop"
+          title="PC Hardware & Components"
+          subtitle="Processors, Graphics Cards, Motherboards, RAM & NVMe SSDs with official warranty."
+          products={componentProducts.length > 0 ? componentProducts : allProducts}
+          viewAllLink="/category/components"
+          tabs={["All", "Components", "Storage"]}
+          limit={8}
         />
 
-        <FlashSale products={products} />
+        {/* PC Builder Custom Rig Promo Banner */}
+        <PcBuilderBanner />
 
+        {/* Curated Product Section 2: Top Laptops & Notebooks */}
         <ProductGridSection
-          title="Trending Now"
-          products={products.slice().reverse()}
+          title="Top Selling Laptops & MacBooks"
+          subtitle="Gaming beasts, ultraportables and creator workstations from ASUS ROG, Lenovo, HP & Apple."
+          products={laptopProducts.length > 0 ? laptopProducts : allProducts}
+          viewAllLink="/category/laptops"
+          tabs={["All", "Laptops"]}
+          limit={8}
         />
 
+        {/* Curated Product Section 3: High Refresh Rate Gaming Monitors */}
         <ProductGridSection
-          title="Smartphone Collection"
-          products={products.filter((p) => p.category === "Smartphone")}
-          viewAllLink="/category/smartphone"
+          title="High-End Monitors & Displays"
+          subtitle="144Hz - 360Hz Esports monitors, 4K UHD color accurate screens & curved OLED panels."
+          products={monitorProducts.length > 0 ? monitorProducts : allProducts}
+          viewAllLink="/category/monitors"
+          limit={4}
         />
 
-        {/* For brevity, passing subsets of real data to represent other collections */}
-        <ProductGridSection
-          title="Laptops & Desktops"
-          products={products.filter(
-            (p) => p.category === "Laptops" || p.category === "Desktops",
-          )}
-          viewAllLink="/category/computers"
-        />
+        {/* Authorized Brands Carousel/Grid */}
+        <BrandShowcase />
 
-        <ProductGridSection
-          title="Accessories & Others"
-          products={products.filter(
-            (p) => p.category !== "Smartphone" && p.category !== "Laptops",
-          )}
-          viewAllLink="/category/accessories"
-        />
-
+        {/* Why Choose Gadget Land BD + SEO Guide Box */}
         <WhyChooseUs />
-        <Testimonials />
-        <Newsletter />
+
+        {/* Comprehensive Gadget Land BD Footer */}
         <Footer />
       </main>
     </div>

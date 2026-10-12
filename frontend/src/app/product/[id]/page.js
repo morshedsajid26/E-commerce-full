@@ -22,11 +22,11 @@ export async function generateMetadata({ params }) {
     where: { id },
   });
 
-  if (!product) return { title: "Product Not Found | GADGETS BD" };
+  if (!product) return { title: "Product Not Found | Gadget Land BD" };
 
   return {
-    title: `${product.name} | GADGETS BD`,
-    description: `Buy ${product.name} from ${product.company} at the best price.`,
+    title: `${product.name} | Gadget Land BD`,
+    description: `Buy ${product.name} from ${product.company} at the best price from Gadget Land BD.`,
   };
 }
 

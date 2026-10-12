@@ -46,8 +46,8 @@ const preorderItems = [
 ];
 
 export const metadata = {
-  title: "Pre-Order | GADGETS BD",
-  description: "Pre-order the latest upcoming gadgets and tech from GADGETS BD.",
+  title: "Pre-Order Upcoming Tech | Gadget Land BD",
+  description: "Pre-order the latest upcoming computing hardware and flagship devices from Gadget Land BD.",
 };
 
 export default function PreOrderPage() {

@@ -5,8 +5,8 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "My Gadgets - E-commerce",
-  description: "Modern IT gadgets e-commerce platform",
+  title: "Gadget Land BD - Leading Computer, Laptop & Gaming PC Shop in Bangladesh",
+  description: "Buy Desktop PC, Laptop, Graphics Card, Processor, Monitor, Gaming Gear & Components at Best Price in Bangladesh with Official Warranty from Gadget Land.",
 };
 
 export default function RootLayout({ children }) {

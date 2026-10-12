@@ -1,107 +1,365 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, ShieldCheck, Zap, Flame } from "lucide-react";
+import {
+  Laptop,
+  Monitor,
+  Cpu,
+  HardDrive,
+  Gamepad2,
+  Wifi,
+  Printer,
+  Headphones,
+  Zap,
+  ShieldCheck,
+  ChevronRight,
+  Flame,
+  ArrowRight,
+  Wrench,
+  Sparkles,
+  ChevronLeft,
+} from "lucide-react";
 
 export function HeroSection() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const heroSlides = [
+    {
+      badge: "Flagship GPU Launch 2026",
+      title: "GeForce RTX 40 & 50 Series",
+      subtitle: "Unleash extreme DLSS 3.5 & ray tracing graphics for 4K ultra gaming and AI workstations.",
+      pricePrefix: "Starting at",
+      price: "৳ 48,500",
+      link: "/category/components",
+      cta: "Explore Graphics Cards",
+      tag: "Official BD Distributor",
+      image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=1000&q=80",
+      bgGradient: "from-slate-950 via-slate-900 to-rose-950/40",
+      accentColor: "text-red-500",
+    },
+    {
+      badge: "Next-Gen Gaming Laptops",
+      title: "ASUS ROG & MSI Raider",
+      subtitle: "Intel Core 14th Gen & AMD Ryzen 8000/9000 with up to 240Hz OLED high-refresh screens.",
+      pricePrefix: "Special Offer from",
+      price: "৳ 1,18,000",
+      link: "/category/laptops",
+      cta: "Shop Gaming Laptops",
+      tag: "Free Gaming Backpack",
+      image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=1000&q=80",
+      bgGradient: "from-slate-950 via-slate-900 to-indigo-950/40",
+      accentColor: "text-indigo-400",
+    },
+    {
+      badge: "Workstation & Enthusiast",
+      title: "Intel Core Ultra & AMD Ryzen 9",
+      subtitle: "Highest multi-threaded benchmarks, unlocked overclocking, and PCIe 5.0 speeds.",
+      pricePrefix: "Starting from",
+      price: "৳ 24,500",
+      link: "/category/components",
+      cta: "View Processors",
+      tag: "3 Years Official Warranty",
+      image: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=1000&q=80",
+      bgGradient: "from-slate-950 via-slate-900 to-amber-950/40",
+      accentColor: "text-amber-400",
+    },
+  ];
+
+  const megaCategories = [
+    {
+      title: "Desktop PC",
+      subtitle: "Gaming PC, All-in-One, Brand PC",
+      icon: Monitor,
+      href: "/category/desktops",
+    },
+    {
+      title: "Laptop & Notebook",
+      subtitle: "Gaming, Ultrabook, MacBook",
+      icon: Laptop,
+      href: "/category/laptops",
+    },
+    {
+      title: "PC Components",
+      subtitle: "Processor, GPU, Motherboard, RAM",
+      icon: Cpu,
+      href: "/category/components",
+    },
+    {
+      title: "Gaming Monitors",
+      subtitle: "144Hz-360Hz, 4K, Curved OLED",
+      icon: Monitor,
+      href: "/category/monitors",
+    },
+    {
+      title: "Storage & Memory",
+      subtitle: "Gen4 NVMe SSD, DDR5 RAM, HDD",
+      icon: HardDrive,
+      href: "/category/components",
+    },
+    {
+      title: "Gaming Gear & VR",
+      subtitle: "Keyboards, Mice, Chairs, Headsets",
+      icon: Gamepad2,
+      href: "/category/gaming",
+    },
+    {
+      title: "Networking & Router",
+      subtitle: "Wi-Fi 6/7, Mesh, Switch, Cable",
+      icon: Wifi,
+      href: "/category/networking",
+    },
+    {
+      title: "Office & Printers",
+      subtitle: "Laser Printer, Scanner, Projector",
+      icon: Printer,
+      href: "/shop",
+    },
+    {
+      title: "Sound & Audio",
+      subtitle: "Studio Speakers, Soundbar, ANC",
+      icon: Headphones,
+      href: "/category/audio",
+    },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, [heroSlides.length]);
+
   return (
-    <section className="relative overflow-hidden pt-6 pb-16 lg:pb-24">
-      {/* Background Glows */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-tr from-blue-600/15 via-indigo-500/10 to-transparent blur-3xl -z-10 pointer-events-none" />
-
-      <div className="max-w-[95%] xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Text Column */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/10 text-primary text-xs font-semibold">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Flagship Season 2026 • Official Distributor</span>
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-foreground leading-[1.1]">
-              Elevate Your <span className="bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent">Digital Life</span> With Pure Power.
-            </h1>
-
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Explore the latest premium smartphones, studio-grade laptops, audio marvels and authentic wearables with 100% manufacturer warranty.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
-              <Link
-                href="/shop"
-                className="w-full sm:w-auto h-13 px-8 rounded-xl bg-primary text-primary-foreground font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all hover:gap-3"
-              >
-                <span>Shop Collection</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/pre-order"
-                className="w-full sm:w-auto h-13 px-8 rounded-xl border border-input bg-card/80 hover:bg-accent text-foreground font-bold text-sm flex items-center justify-center gap-2 transition-colors"
-              >
-                <Flame className="w-4 h-4 text-orange-500" />
-                <span>Pre-Order Flagships</span>
-              </Link>
-            </div>
-
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-8 border-t border-border/60 max-w-lg mx-auto lg:mx-0">
-              <div>
-                <p className="text-2xl sm:text-3xl font-black text-foreground">50k+</p>
-                <p className="text-xs text-muted-foreground mt-0.5">Happy Customers</p>
+    <section className="pt-2 pb-6 bg-slate-50 dark:bg-background">
+      <div className="max-w-[96%] xl:max-w-[1600px] mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+          {/* 1. Left Column: Vertical Category Menu (TechLand BD signature side nav) */}
+          <div className="hidden lg:block lg:col-span-3">
+            <div className="bg-card rounded-xl border border-border shadow-xs overflow-hidden h-full flex flex-col justify-between">
+              <div className="bg-red-600 text-white font-extrabold text-xs uppercase tracking-wider px-4 py-3 flex items-center justify-between">
+                <span className="flex items-center gap-2">
+                  <Flame className="w-4 h-4 text-yellow-300" />
+                  Top Tech Categories
+                </span>
+                <span className="text-[10px] bg-red-700/80 px-2 py-0.5 rounded font-bold">
+                  Browse All
+                </span>
               </div>
-              <div>
-                <p className="text-2xl sm:text-3xl font-black text-foreground">100%</p>
-                <p className="text-xs text-muted-foreground mt-0.5">Genuine Guarantee</p>
+
+              <div className="divide-y divide-border/60 flex-1">
+                {megaCategories.map((cat, i) => {
+                  const Icon = cat.icon;
+                  return (
+                    <Link
+                      key={cat.title}
+                      href={cat.href}
+                      className="group flex items-center justify-between px-3.5 py-2.5 hover:bg-red-50 dark:hover:bg-red-950/20 transition-all duration-150"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-7 h-7 rounded-lg bg-muted group-hover:bg-red-600 group-hover:text-white text-muted-foreground flex items-center justify-center transition-colors">
+                          <Icon className="w-3.5 h-3.5" />
+                        </div>
+                        <div className="leading-tight">
+                          <span className="text-xs font-bold text-foreground group-hover:text-red-600 transition-colors block">
+                            {cat.title}
+                          </span>
+                          <span className="text-[10px] text-muted-foreground line-clamp-1">
+                            {cat.subtitle}
+                          </span>
+                        </div>
+                      </div>
+                      <ChevronRight className="w-3.5 h-3.5 text-muted-foreground group-hover:text-red-600 group-hover:translate-x-0.5 transition-all" />
+                    </Link>
+                  );
+                })}
               </div>
-              <div>
-                <p className="text-2xl sm:text-3xl font-black text-foreground">24-48h</p>
-                <p className="text-xs text-muted-foreground mt-0.5">Nationwide Delivery</p>
+
+              {/* Bottom PC Builder Quick Link in Sidebar */}
+              <div className="p-3 bg-red-50 dark:bg-red-950/30 border-t border-red-200 dark:border-red-900/50">
+                <Link
+                  href="/shop"
+                  className="w-full flex items-center justify-center gap-2 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-black uppercase tracking-wider shadow-xs transition-colors"
+                >
+                  <Wrench className="w-3.5 h-3.5" />
+                  <span>Build Custom PC</span>
+                </Link>
               </div>
             </div>
           </div>
 
-          {/* Right Visual Card Column */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="relative rounded-3xl bg-gradient-to-b from-card to-card/60 p-6 sm:p-8 border border-border/80 shadow-2xl backdrop-blur-xl overflow-hidden group">
-                <div className="absolute top-4 right-4 bg-orange-500 text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1 shadow-md">
-                  <Zap className="w-3.5 h-3.5" /> Hot Deal
-                </div>
-
-                <div className="aspect-square rounded-2xl overflow-hidden bg-muted/40 flex items-center justify-center p-6 relative">
-                  <img
-                    src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80"
-                    alt="Featured MacBook Pro"
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-
-                <div className="mt-6 space-y-2">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <span className="text-xs font-semibold text-primary uppercase tracking-wider">Apple Pro Series</span>
-                      <h3 className="text-xl font-bold text-foreground">MacBook Studio Pro M4 Max</h3>
+          {/* 2. Center Column: Promotional Banner Slider */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative rounded-xl overflow-hidden border border-border shadow-xs h-[380px] sm:h-[420px] lg:h-full min-h-[380px] flex flex-col justify-between group">
+              {heroSlides.map((slide, idx) => {
+                const isActive = activeSlide === idx;
+                return (
+                  <div
+                    key={slide.title}
+                    className={`absolute inset-0 transition-opacity duration-700 ${
+                      isActive ? "opacity-100 z-10" : "opacity-0 pointer-events-none"
+                    }`}
+                  >
+                    {/* Background visual banner */}
+                    <div className="absolute inset-0 bg-slate-950">
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="w-full h-full object-cover opacity-35 filter brightness-75 scale-105 group-hover:scale-100 transition-transform duration-1000"
+                      />
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient}`}
+                      />
                     </div>
-                    <div className="text-right">
-                      <span className="text-xs text-muted-foreground line-through block">৳ 320,000</span>
-                      <span className="text-xl font-black text-foreground">৳ 289,900</span>
+
+                    {/* Banner Content Overlay */}
+                    <div className="relative z-10 h-full p-6 sm:p-10 flex flex-col justify-between text-white">
+                      <div>
+                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-600/90 text-white text-[11px] font-black uppercase tracking-wider shadow-xs mb-3">
+                          <Sparkles className="w-3 h-3 text-yellow-300" />
+                          <span>{slide.badge}</span>
+                        </div>
+
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-tight max-w-md">
+                          {slide.title}
+                        </h2>
+
+                        <p className="text-xs sm:text-sm text-slate-300 mt-2 max-w-sm line-clamp-2 leading-relaxed">
+                          {slide.subtitle}
+                        </p>
+                      </div>
+
+                      <div className="space-y-4 pt-4">
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-xs text-slate-300">{slide.pricePrefix}</span>
+                          <span className="text-2xl sm:text-3xl font-black text-red-500">
+                            {slide.price}
+                          </span>
+                          <span className="text-[11px] bg-white/10 px-2 py-0.5 rounded text-slate-200 font-semibold ml-2">
+                            {slide.tag}
+                          </span>
+                        </div>
+
+                        <div className="flex items-center gap-3">
+                          <Link
+                            href={slide.link}
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-red-600/30 transition-all hover:gap-3"
+                          >
+                            <span>{slide.cta}</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                          <Link
+                            href="/offers"
+                            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-white/15 hover:bg-white/25 text-white font-bold text-xs backdrop-blur-xs transition-colors"
+                          >
+                            <Flame className="w-3.5 h-3.5 text-amber-400" />
+                            <span>View All Offers</span>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                );
+              })}
 
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    36GB Unified Memory, 1TB SSD, 16.2" Liquid Retina XDR display with ProMotion 120Hz.
-                  </p>
-
-                  <div className="pt-4 flex gap-2">
-                    <Link
-                      href="/category/laptops"
-                      className="w-full py-3 rounded-xl bg-primary text-primary-foreground text-center font-bold text-xs hover:bg-primary/90 transition-colors"
-                    >
-                      View Laptop Deals
-                    </Link>
-                  </div>
+              {/* Slider Arrows & Dots Controls */}
+              <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveSlide(
+                      (prev) => (prev - 1 + heroSlides.length) % heroSlides.length
+                    )
+                  }
+                  className="w-7 h-7 rounded-full bg-black/60 hover:bg-red-600 text-white flex items-center justify-center transition-colors cursor-pointer"
+                  aria-label="Previous slide"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <div className="flex items-center gap-1.5">
+                  {heroSlides.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setActiveSlide(i)}
+                      className={`h-2 rounded-full transition-all cursor-pointer ${
+                        activeSlide === i ? "w-6 bg-red-500" : "w-2 bg-white/40 hover:bg-white/70"
+                      }`}
+                      aria-label={`Go to slide ${i + 1}`}
+                    />
+                  ))}
                 </div>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveSlide((prev) => (prev + 1) % heroSlides.length)
+                  }
+                  className="w-7 h-7 rounded-full bg-black/60 hover:bg-red-600 text-white flex items-center justify-center transition-colors cursor-pointer"
+                  aria-label="Next slide"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. Right Column: 2 Stacked Feature Promo Cards (TechLand signature promo banners) */}
+          <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+            {/* Promo Card 1: PC Builder Highlight */}
+            <div className="relative rounded-xl overflow-hidden border border-red-500/30 bg-gradient-to-br from-slate-900 via-slate-950 to-red-950/60 p-5 text-white flex flex-col justify-between shadow-xs group">
+              <div className="space-y-1.5">
+                <span className="text-[10px] font-black uppercase tracking-widest text-red-400 bg-red-500/15 px-2 py-0.5 rounded inline-block">
+                  Custom Gaming PC
+                </span>
+                <h3 className="text-lg font-black leading-tight text-white group-hover:text-red-400 transition-colors">
+                  Build Your Dream Gaming Rig
+                </h3>
+                <p className="text-xs text-slate-300 line-clamp-2">
+                  Select Processor, Motherboard, GPU & Power with automated compatibility checks.
+                </p>
+              </div>
+
+              <div className="pt-4 flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] text-slate-400 block">EMI Starts From</span>
+                  <span className="text-sm font-black text-amber-400">৳ 2,450 / month</span>
+                </div>
+                <Link
+                  href="/shop"
+                  className="px-3.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-black flex items-center gap-1 shadow-md shadow-red-600/25 transition-all"
+                >
+                  <span>Start Build</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Promo Card 2: Laptop Mega Deals */}
+            <div className="relative rounded-xl overflow-hidden border border-border bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-5 text-white flex flex-col justify-between shadow-xs group">
+              <div className="space-y-1.5">
+                <span className="text-[10px] font-black uppercase tracking-widest text-amber-400 bg-amber-500/15 px-2 py-0.5 rounded inline-block">
+                  Official Warranty
+                </span>
+                <h3 className="text-lg font-black leading-tight text-white group-hover:text-amber-300 transition-colors">
+                  Official Laptop Mega Offer
+                </h3>
+                <p className="text-xs text-slate-300 line-clamp-2">
+                  HP, Dell, Lenovo, Acer & Apple MacBooks with free accessories bundle & 2-year warranty.
+                </p>
+              </div>
+
+              <div className="pt-4 flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] text-slate-400 block">Up to Cashback</span>
+                  <span className="text-sm font-black text-red-500">৳ 12,000 Off</span>
+                </div>
+                <Link
+                  href="/category/laptops"
+                  className="px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-red-600 text-white text-xs font-black flex items-center gap-1 transition-all border border-slate-700 hover:border-red-600"
+                >
+                  <span>View Laptops</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
           </div>

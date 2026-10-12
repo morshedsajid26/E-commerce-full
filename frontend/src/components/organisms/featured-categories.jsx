@@ -3,116 +3,144 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Smartphone,
   Laptop,
-  Headphones,
-  Watch,
-  Gamepad2,
+  Monitor,
   Cpu,
+  HardDrive,
+  Gamepad2,
+  Armchair,
+  CircuitBoard,
+  Keyboard,
+  ShieldAlert,
   ArrowRight,
+  Flame,
 } from "lucide-react";
 
 export function FeaturedCategories() {
   const categories = [
     {
-      title: "Smartphones",
-      slug: "smartphone",
-      desc: "iPhones, Samsung Galaxy, Pixel",
-      icon: Smartphone,
-      color: "from-blue-600/20 to-blue-500/5",
-      accent: "text-blue-500",
-      count: "120+ Models",
-    },
-    {
-      title: "Laptops & PCs",
+      title: "Laptop & Notebook",
       slug: "laptops",
-      desc: "MacBook, ThinkPad, ROG",
+      desc: "Gaming, Ultrabook, Mac",
       icon: Laptop,
-      color: "from-indigo-600/20 to-indigo-500/5",
-      accent: "text-indigo-500",
-      count: "85+ Models",
+      color: "from-red-600/15 to-rose-500/5",
+      accent: "text-red-600",
+      count: "150+ Models",
     },
     {
-      title: "Headphones & Audio",
-      slug: "audio",
-      desc: "Sony, Bose, AirPods, JBL",
-      icon: Headphones,
-      color: "from-purple-600/20 to-purple-500/5",
-      accent: "text-purple-500",
-      count: "64+ Models",
+      title: "Desktop PC",
+      slug: "desktops",
+      desc: "Custom Rig, All-in-One",
+      icon: Monitor,
+      color: "from-blue-600/15 to-blue-500/5",
+      accent: "text-blue-600",
+      count: "95+ Builds",
     },
     {
-      title: "Smartwatches",
-      slug: "smartwatches",
-      desc: "Apple Watch, Galaxy Watch, Garmin",
-      icon: Watch,
-      color: "from-rose-600/20 to-rose-500/5",
-      accent: "text-rose-500",
-      count: "40+ Models",
-    },
-    {
-      title: "Gaming & VR",
-      slug: "gaming",
-      desc: "PlayStation, Xbox, Meta Quest",
-      icon: Gamepad2,
-      color: "from-emerald-600/20 to-emerald-500/5",
-      accent: "text-emerald-500",
-      count: "35+ Models",
-    },
-    {
-      title: "Accessories",
-      slug: "accessories",
-      desc: "GaN Chargers, Docks, Cases",
+      title: "Processors (CPU)",
+      slug: "components",
+      desc: "Intel Core Ultra, Ryzen 9",
       icon: Cpu,
-      color: "from-amber-600/20 to-amber-500/5",
-      accent: "text-amber-500",
-      count: "190+ Items",
+      color: "from-amber-600/15 to-amber-500/5",
+      accent: "text-amber-600",
+      count: "60+ Models",
+    },
+    {
+      title: "Graphics Card (GPU)",
+      slug: "components",
+      desc: "RTX 40/50 Series, RX 7000",
+      icon: CircuitBoard,
+      color: "from-emerald-600/15 to-emerald-500/5",
+      accent: "text-emerald-600",
+      count: "80+ Models",
+    },
+    {
+      title: "Gaming Monitors",
+      slug: "monitors",
+      desc: "144Hz - 360Hz, 4K, Curved",
+      icon: Monitor,
+      color: "from-indigo-600/15 to-indigo-500/5",
+      accent: "text-indigo-600",
+      count: "110+ Models",
+    },
+    {
+      title: "NVMe SSD & Storage",
+      slug: "components",
+      desc: "PCIe Gen 4/5, External HDD",
+      icon: HardDrive,
+      color: "from-purple-600/15 to-purple-500/5",
+      accent: "text-purple-600",
+      count: "75+ Items",
+    },
+    {
+      title: "Keyboards & Mice",
+      slug: "accessories",
+      desc: "Mechanical, Wireless, RGB",
+      icon: Keyboard,
+      color: "from-cyan-600/15 to-cyan-500/5",
+      accent: "text-cyan-600",
+      count: "140+ Items",
+    },
+    {
+      title: "Gaming Chairs",
+      slug: "gaming",
+      desc: "Ergonomic, Racing Style",
+      icon: Armchair,
+      color: "from-rose-600/15 to-rose-500/5",
+      accent: "text-rose-600",
+      count: "30+ Models",
     },
   ];
 
   return (
-    <section className="py-12 border-t border-border/40">
-      <div className="max-w-[95%] xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4 mb-8">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-              Featured Categories
-            </h2>
-            <p className="text-sm text-muted-foreground mt-1">
-              Browse top hardware engineered for creators, gamers & professionals.
-            </p>
+    <section className="py-8 bg-background border-t border-border">
+      <div className="max-w-[96%] xl:max-w-[1600px] mx-auto px-4 sm:px-6">
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-6 pb-3 border-b border-border">
+          <div className="flex items-center gap-2.5">
+            <div className="w-2.5 h-6 bg-red-600 rounded-xs" />
+            <div>
+              <h2 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+                Featured Hardware Categories
+              </h2>
+              <p className="text-xs text-muted-foreground">
+                Get genuine IT hardware & gaming gadgets at the best prices in Bangladesh
+              </p>
+            </div>
           </div>
+
           <Link
             href="/shop"
-            className="text-sm font-bold text-primary hover:underline flex items-center gap-1 group"
+            className="text-xs font-bold text-red-600 hover:text-red-700 flex items-center gap-1 group"
           >
             <span>View All Categories</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {/* Categories Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3">
           {categories.map((cat) => {
             const Icon = cat.icon;
             return (
               <Link
-                key={cat.slug}
+                key={cat.title}
                 href={`/category/${cat.slug}`}
-                className="group relative rounded-2xl border border-border/70 bg-card p-5 hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                className="group p-4 rounded-xl border border-border bg-card hover:border-red-500/60 hover:shadow-md transition-all duration-200 flex flex-col items-center text-center justify-between"
               >
                 <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-tr ${cat.color} ${cat.accent} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-tr ${cat.color} ${cat.accent} flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-red-600 group-hover:text-white transition-all`}
                 >
                   <Icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-base text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="font-extrabold text-xs sm:text-sm text-foreground group-hover:text-red-600 transition-colors line-clamp-1">
                     {cat.title}
                   </h3>
-                  <p className="text-xs text-muted-foreground mt-1 line-clamp-1">
+                  <p className="text-[10px] text-muted-foreground mt-0.5 line-clamp-1">
                     {cat.desc}
                   </p>
-                  <span className="text-[11px] font-semibold text-primary/80 mt-3 block">
+                  <span className="text-[10px] font-bold text-red-600/90 mt-2 block bg-red-50 dark:bg-red-950/40 py-0.5 px-2 rounded-full">
                     {cat.count}
                   </span>
                 </div>

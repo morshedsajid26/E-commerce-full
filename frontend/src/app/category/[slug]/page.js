@@ -21,8 +21,8 @@ export async function generateMetadata({ params }) {
     .replace(/-/g, " ")
     .replace(/\b\w/g, (l) => l.toUpperCase());
   return {
-    title: `${categoryName} | GADGETS BD`,
-    description: `Shop the best ${categoryName} at GADGETS BD.`,
+    title: `${categoryName} | Gadget Land BD`,
+    description: `Shop the best ${categoryName} with official warranty at Gadget Land BD.`,
   };
 }
 

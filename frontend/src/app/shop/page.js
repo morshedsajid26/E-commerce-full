@@ -16,9 +16,9 @@ const Footer = dynamicNext(
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Shop All Gadgets | GADGETS BD",
+  title: "Shop All Products | Gadget Land BD",
   description:
-    "Browse our complete collection of smartphones, laptops, and premium gadgets.",
+    "Browse our complete collection of laptops, desktops, components, and gadgets from Gadget Land.",
 };
 
 export default async function ShopPage() {

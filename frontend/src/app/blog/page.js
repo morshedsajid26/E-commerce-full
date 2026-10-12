@@ -73,8 +73,8 @@ const placeholderBlogs = [
 ];
 
 export const metadata = {
-  title: "Blog | GADGETS BD",
-  description: "Latest tech news, reviews, and buying guides from GADGETS BD.",
+  title: "Blog & Tech News | Gadget Land BD",
+  description: "Latest tech news, hardware reviews, and buying guides from Gadget Land BD.",
 };
 
 export default function BlogPage() {

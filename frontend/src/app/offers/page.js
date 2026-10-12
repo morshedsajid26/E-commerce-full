@@ -22,7 +22,7 @@ const activeOffers = [
   {
     id: 2,
     title: "First Purchase Discount",
-    description: "Welcome to GADGETS BD! Enjoy a flat 10% discount on your first order. Minimum cart value ৳5,000.",
+    description: "Welcome to Gadget Land BD! Enjoy a flat 10% discount on your first order. Minimum cart value ৳5,000.",
     code: "WELCOME10",
     color: "from-medical-blue-500 to-blue-700",
     icon: Gift,
@@ -40,8 +40,8 @@ const activeOffers = [
 ];
 
 export const metadata = {
-  title: "Offers & Discounts | GADGETS BD",
-  description: "Find the latest coupon codes, flash sales, and exclusive discounts at GADGETS BD.",
+  title: "Offers & Discounts | Gadget Land BD",
+  description: "Find the latest coupon codes, flash sales, and exclusive discounts at Gadget Land BD.",
 };
 
 export default function OffersPage() {
