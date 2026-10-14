@@ -25,7 +25,7 @@ export function BrandShowcase() {
       <div className="max-w-[96%] xl:max-w-[1600px] mx-auto px-4 sm:px-6">
         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-6 pb-3 border-b border-border">
           <div className="flex items-center gap-2.5">
-            <div className="w-2.5 h-6 bg-red-600 rounded-xs" />
+            <div className="w-2.5 h-6 bg-blue-600 rounded-xs" />
             <div>
               <h2 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
                 Authorized Brand Partners
@@ -38,7 +38,7 @@ export function BrandShowcase() {
 
           <Link
             href="/shop"
-            className="text-xs font-bold text-red-600 hover:text-red-700 flex items-center gap-1 group"
+            className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 group"
           >
             <span>All Authorized Brands</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -51,9 +51,9 @@ export function BrandShowcase() {
             <Link
               key={b.name}
               href={b.link}
-              className="p-4 rounded-xl border border-border bg-card hover:border-red-500 hover:shadow-md transition-all text-center group flex flex-col justify-center items-center h-24"
+              className="p-4 rounded-xl border border-border bg-card hover:border-blue-500 hover:shadow-md transition-all text-center group flex flex-col justify-center items-center h-24"
             >
-              <span className="font-black text-lg tracking-wider text-foreground group-hover:text-red-600 transition-colors">
+              <span className="font-black text-lg tracking-wider text-foreground group-hover:text-blue-600 transition-colors">
                 {b.name}
               </span>
               <span className="text-[10px] text-muted-foreground group-hover:text-foreground transition-colors mt-0.5 line-clamp-1">

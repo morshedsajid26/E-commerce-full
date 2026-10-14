@@ -17,7 +17,7 @@ export const TableRow = ({ children, className = "", ...props }) => (
 );
 
 export const TableCell = ({ children, className = "", ...props }) => (
-  <td className={`py-4 text-center px-4 text-sm font-normal text-slate-600 group-hover:text-medical-blue-600 transition-colors ${className}`} {...props}>
+  <td className={`py-4 text-center px-4 text-sm font-normal text-slate-600 group-hover:text-blue-600 transition-colors ${className}`} {...props}>
     {children}
   </td>
 );
@@ -126,7 +126,7 @@ export function Table({ TableHeads, TableRows, headClass, tableClass, children, 
                     style={{ width: header.column.columnDef.width || header.column.columnDef.size }}
                   >
                     <div 
-                      className="flex items-center justify-center gap-2 cursor-pointer hover:text-medical-blue-200 transition-colors"
+                      className="flex items-center justify-center gap-2 cursor-pointer hover:text-blue-300 transition-colors"
                       onClick={header.column.getToggleSortingHandler()}
                     >
                       {header.isPlaceholder
@@ -139,8 +139,8 @@ export function Table({ TableHeads, TableRows, headClass, tableClass, children, 
                       {header.column.getCanSort() && (
                         <span className="text-slate-400">
                           {{
-                            asc: <ArrowUp size={14} className="text-medical-blue-300" />,
-                            desc: <ArrowDown size={14} className="text-medical-blue-300" />,
+                            asc: <ArrowUp size={14} className="text-blue-400" />,
+                            desc: <ArrowDown size={14} className="text-blue-400" />,
                           }[header.column.getIsSorted()] ?? <ArrowUpDown size={14} />}
                         </span>
                       )}
@@ -158,7 +158,7 @@ export function Table({ TableHeads, TableRows, headClass, tableClass, children, 
                 {row.getVisibleCells().map((cell) => (
                   <td
                     key={cell.id}
-                    className="py-4 text-center px-4 text-sm font-normal text-slate-600 group-hover:text-medical-blue-600 transition-colors"
+                    className="py-4 text-center px-4 text-sm font-normal text-slate-600 group-hover:text-blue-600 transition-colors"
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
@@ -178,7 +178,7 @@ export function Table({ TableHeads, TableRows, headClass, tableClass, children, 
         
         <div className="flex items-center gap-2">
             <button
-                className="p-2 rounded-lg border border-slate-200 bg-white text-slate-400 hover:bg-medical-blue-50 hover:text-medical-blue-600 hover:border-medical-blue-200 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                className="p-2 rounded-lg border border-slate-200 bg-white text-slate-400 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
                 onClick={() => table.previousPage()}
                 disabled={!table.getCanPreviousPage()}
             >
@@ -212,7 +212,7 @@ export function Table({ TableHeads, TableRows, headClass, tableClass, children, 
                                 key={pageIdx}
                                 className={`w-9 h-9 rounded-lg text-sm font-bold transition-all ${
                                     currentPageIdx === pageIdx
-                                        ? "bg-medical-blue-600 text-white shadow-md shadow-medical-blue-600/20"
+                                        ? "bg-blue-600 text-white shadow-md shadow-blue-600/20"
                                         : "bg-white text-slate-600 border border-transparent hover:border-slate-200 hover:bg-slate-50"
                                 }`}
                                 onClick={() => table.setPageIndex(pageIdx)}
@@ -225,7 +225,7 @@ export function Table({ TableHeads, TableRows, headClass, tableClass, children, 
             </div>
 
             <button
-                className="p-2 rounded-lg border border-slate-200 bg-white text-slate-400 hover:bg-medical-blue-50 hover:text-medical-blue-600 hover:border-medical-blue-200 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                className="p-2 rounded-lg border border-slate-200 bg-white text-slate-400 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
                 onClick={() => table.nextPage()}
                 disabled={!table.getCanNextPage()}
             >

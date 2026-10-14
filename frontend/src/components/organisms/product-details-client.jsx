@@ -152,7 +152,7 @@ export function ProductDetailsClient({ product, relatedProducts = [] }) {
               </span>
             )}
             {product.discount > 0 && (
-              <span className="text-xs font-black px-2.5 py-1 rounded-lg bg-rose-500 text-white uppercase">
+              <span className="text-xs font-black px-2.5 py-1 rounded-lg bg-blue-600 text-white uppercase">
                 Save {product.discount}%
               </span>
             )}

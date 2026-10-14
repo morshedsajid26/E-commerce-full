@@ -193,7 +193,7 @@ export default function CustomerRequestsPage() {
       {/* Main Table view */}
       {loading ? (
         <div className="h-96 w-full flex flex-col items-center justify-center gap-4 text-slate-400 bg-white rounded-3xl border border-slate-100 shadow-sm">
-          <Loader2 className="w-10 h-10 animate-spin text-medical-blue-600" />
+          <Loader2 className="w-10 h-10 animate-spin text-blue-600" />
           <p className="font-semibold animate-pulse text-sm">
             Loading wishlist requests...
           </p>

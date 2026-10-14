@@ -25,7 +25,7 @@ export default function ProfileLayout({ children }) {
   if (loading) {
     return (
       <div className="h-screen w-full flex flex-col items-center justify-center gap-4 text-slate-400 bg-slate-50">
-        <Loader2 className="w-10 h-10 animate-spin text-medical-blue-600" />
+        <Loader2 className="w-10 h-10 animate-spin text-blue-600" />
         <p className="font-semibold text-sm text-slate-500 animate-pulse">
           Authenticating session...
         </p>
@@ -39,7 +39,7 @@ export default function ProfileLayout({ children }) {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex">
+    <div className="min-h-screen bg-slate-50/60 flex">
       <Sidebar />
       <div
         className={cn(

@@ -208,7 +208,7 @@ export function Navbar() {
             >
               <Heart className="h-4.5 w-4.5" />
               {wishlist.length > 0 && (
-                <span className="absolute top-0.5 right-0.5 h-4 w-4 rounded-full bg-red-600 text-white text-[10px] font-black flex items-center justify-center">
+                <span className="absolute top-0.5 right-0.5 h-4 w-4 rounded-full bg-blue-600 text-white text-[10px] font-black flex items-center justify-center">
                   {wishlist.length}
                 </span>
               )}
@@ -223,7 +223,7 @@ export function Navbar() {
             >
               <ShoppingCart className="h-4.5 w-4.5" />
               {totalCartCount > 0 && (
-                <span className="absolute top-0.5 right-0.5 h-4 w-4 rounded-full bg-red-600 text-white text-[10px] font-black flex items-center justify-center">
+                <span className="absolute top-0.5 right-0.5 h-4 w-4 rounded-full bg-blue-600 text-white text-[10px] font-black flex items-center justify-center">
                   {totalCartCount}
                 </span>
               )}

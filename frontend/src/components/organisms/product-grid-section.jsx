@@ -187,10 +187,10 @@ export function ProductGridSection({
   return (
     <section className="py-8 bg-background">
       <div className="max-w-[96%] xl:max-w-[1600px] mx-auto px-4 sm:px-6">
-        {/* Section Header with Techland BD Style */}
+        {/* Section Header */}
         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3 mb-6 pb-3 border-b border-border">
           <div className="flex items-center gap-2.5">
-            <div className="w-2.5 h-6 bg-red-600 rounded-xs" />
+            <div className="w-2.5 h-6 bg-blue-600 rounded-xs" />
             <div>
               <h2 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
                 {title}
@@ -212,7 +212,7 @@ export function ProductGridSection({
                     onClick={() => setActiveTab(tab)}
                     className={`px-3 py-1 rounded text-xs font-bold transition-all cursor-pointer ${
                       activeTab === tab
-                        ? "bg-red-600 text-white shadow-xs"
+                        ? "bg-blue-600 text-white shadow-xs"
                         : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
@@ -225,7 +225,7 @@ export function ProductGridSection({
             {viewAllLink && (
               <Link
                 href={viewAllLink}
-                className="text-xs font-bold text-red-600 hover:text-red-700 flex items-center gap-1 group"
+                className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 group"
               >
                 <span>View All</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -250,12 +250,12 @@ export function ProductGridSection({
             return (
               <div
                 key={product.id}
-                className="group rounded-xl border border-border bg-card p-4 hover:border-red-500/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-between relative overflow-hidden"
+                className="group rounded-xl border border-border bg-card p-4 hover:border-blue-500/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-between relative overflow-hidden"
               >
                 {/* Top Badges & Actions */}
                 <div className="flex items-center justify-between gap-2 z-10">
                   {discountPercent > 0 ? (
-                    <span className="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded shadow-xs uppercase">
+                    <span className="bg-blue-600 text-white text-[10px] font-black px-2 py-0.5 rounded shadow-xs uppercase">
                       Save {discountPercent}%
                     </span>
                   ) : (
@@ -271,8 +271,8 @@ export function ProductGridSection({
                       onClick={(e) => handleToggleCompare(product.id, e)}
                       className={`p-1.5 rounded-lg border transition-colors cursor-pointer ${
                         isCompared
-                          ? "bg-red-600 text-white border-red-600"
-                          : "bg-muted text-muted-foreground border-border hover:text-foreground hover:border-red-400"
+                          ? "bg-blue-600 text-white border-blue-600"
+                          : "bg-muted text-muted-foreground border-border hover:text-foreground hover:border-blue-400"
                       }`}
                       title="Compare"
                     >
@@ -285,8 +285,8 @@ export function ProductGridSection({
                       onClick={(e) => handleToggleWishlist(product.id, e)}
                       className={`p-1.5 rounded-lg border transition-colors cursor-pointer ${
                         isWishlisted
-                          ? "bg-red-600 text-white border-red-600"
-                          : "bg-muted text-muted-foreground border-border hover:text-foreground hover:border-red-400"
+                          ? "bg-blue-600 text-white border-blue-600"
+                          : "bg-muted text-muted-foreground border-border hover:text-foreground hover:border-blue-400"
                       }`}
                       title="Wishlist"
                     >
@@ -316,12 +316,12 @@ export function ProductGridSection({
 
                     <Link
                       href={`/product/${product.id}`}
-                      className="font-bold text-xs sm:text-sm text-foreground line-clamp-2 group-hover:text-red-600 transition-colors leading-snug"
+                      className="font-bold text-xs sm:text-sm text-foreground line-clamp-2 group-hover:text-blue-600 transition-colors leading-snug"
                     >
                       {product.title}
                     </Link>
 
-                    {/* Spec Bullet points (TechLand BD signature feature) */}
+                    {/* Spec Bullet points */}
                     <ul className="mt-2 space-y-1 text-[11px] text-muted-foreground">
                       {(product.specs || [
                         "100% Genuine BD Warranty",
@@ -331,7 +331,7 @@ export function ProductGridSection({
                         .slice(0, 3)
                         .map((spec, i) => (
                           <li key={i} className="flex items-center gap-1.5 line-clamp-1">
-                            <span className="w-1 h-1 rounded-full bg-red-600 shrink-0" />
+                            <span className="w-1 h-1 rounded-full bg-blue-600 shrink-0" />
                             <span>{spec}</span>
                           </li>
                         ))}
@@ -346,7 +346,7 @@ export function ProductGridSection({
                           ৳ {product.oldPrice?.toLocaleString()}
                         </span>
                       )}
-                      <span className="text-sm sm:text-base font-black text-red-600">
+                      <span className="text-sm sm:text-base font-black text-blue-600">
                         ৳ {product.price?.toLocaleString()}
                       </span>
                     </div>
@@ -354,7 +354,7 @@ export function ProductGridSection({
                     <button
                       type="button"
                       onClick={(e) => handleAddToCart(product, e)}
-                      className="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold flex items-center gap-1 shadow-xs transition-colors cursor-pointer"
+                      className="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-1 shadow-xs transition-colors cursor-pointer"
                     >
                       <ShoppingBag className="w-3.5 h-3.5" />
                       <span>Buy Now</span>

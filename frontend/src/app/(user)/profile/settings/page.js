@@ -274,7 +274,7 @@ export default function ProfilePage() {
   if (loadingCustomer) {
     return (
       <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center font-sans">
-        <Loader2 className="w-10 h-10 animate-spin text-medical-blue-600 mb-2" />
+        <Loader2 className="w-10 h-10 animate-spin text-red-600 mb-2" />
         <span className="text-slate-500 font-bold text-sm">
           Loading your profile portal...
         </span>
@@ -303,7 +303,7 @@ export default function ProfilePage() {
               )}
             </div>
 
-            <label className="absolute bottom-0 right-0 w-8 h-8 sm:w-10 sm:h-10 bg-medical-blue-600 hover:bg-medical-blue-700 text-white rounded-full flex items-center justify-center shadow-lg cursor-pointer transition-colors duration-200 border-2 border-white">
+            <label className="absolute bottom-0 right-0 w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center shadow-lg shadow-blue-600/30 cursor-pointer transition-colors duration-200 border-2 border-white">
               <Camera size={16} />
               <input
                 type="file"
@@ -319,9 +319,9 @@ export default function ProfilePage() {
               Personal Details
             </h2>
             <div className="flex flex-col md:flex-row items-center gap-2 mb-3">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-medical-blue-50 text-medical-blue-700 border border-medical-blue-100 capitalize">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200 capitalize">
                 <Shield size={12} />
-                Customer
+                GadgetLand Customer
               </span>
             </div>
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
@@ -365,7 +365,7 @@ export default function ProfilePage() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  className="w-full h-12 pl-11 pr-4 border border-slate-200 rounded-xl text-sm focus:ring-4 focus:ring-medical-blue-500/10 focus:border-medical-blue-500 outline-none font-semibold text-slate-800 transition-all"
+                  className="w-full h-12 pl-11 pr-4 border border-slate-200 rounded-xl text-sm focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none font-semibold text-slate-800 transition-all"
                 />
               </div>
             </div>
@@ -392,7 +392,7 @@ export default function ProfilePage() {
           <div className="border-t border-slate-100 pt-6 space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <MapPin className="text-medical-blue-600 w-5 h-5" />
+                <MapPin className="text-blue-600 w-5 h-5" />
                 <h3 className="text-base font-extrabold text-slate-900">
                   Saved Delivery Locations
                 </h3>
@@ -401,7 +401,7 @@ export default function ProfilePage() {
               <button
                 type="button"
                 onClick={() => setIsAddingNew(true)}
-                className="inline-flex items-center gap-1 py-1.5 px-3 rounded-lg text-xs font-bold text-medical-blue-600 bg-medical-blue-50 hover:bg-medical-blue-100 transition-all"
+                className="inline-flex items-center gap-1 py-1.5 px-3 rounded-lg text-xs font-bold text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-100 transition-all cursor-pointer"
               >
                 <Plus size={14} />
                 <span>Add Address</span>
@@ -410,7 +410,7 @@ export default function ProfilePage() {
 
             {/* Add new address inline box */}
             {isAddingNew && (
-              <div className="bg-slate-50 p-4 rounded-2xl border border-medical-blue-100 space-y-3 animate-in slide-in-from-top duration-200">
+              <div className="bg-slate-50 p-4 rounded-2xl border border-blue-200/80 space-y-3 animate-in slide-in-from-top duration-200">
                 <span className="block text-xs font-bold text-slate-600">
                   Register New Address
                 </span>
@@ -418,7 +418,7 @@ export default function ProfilePage() {
                   placeholder="Type your new delivery address here (House, Flat, Street, Area, City)..."
                   value={newAddressText}
                   onChange={(e) => setNewAddressText(e.target.value)}
-                  className="w-full min-h-[70px] p-3 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-medical-blue-500 outline-none font-semibold text-slate-800 bg-white resize-none"
+                  className="w-full min-h-[70px] p-3 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none font-semibold text-slate-800 bg-white resize-none"
                 />
                 <div className="flex justify-end gap-2">
                   <button
@@ -427,14 +427,14 @@ export default function ProfilePage() {
                       setIsAddingNew(false);
                       setNewAddressText("");
                     }}
-                    className="px-3 py-1.5 rounded-lg bg-slate-200 text-slate-600 hover:bg-slate-300 transition-all font-bold text-xs"
+                    className="px-3 py-1.5 rounded-lg bg-slate-200 text-slate-600 hover:bg-slate-300 transition-all font-bold text-xs cursor-pointer"
                   >
                     Cancel
                   </button>
                   <button
                     type="button"
                     onClick={handleAddNewAddress}
-                    className="px-3 py-1.5 rounded-lg bg-medical-blue-600 text-white hover:bg-medical-blue-700 transition-all font-bold text-xs"
+                    className="px-3 py-1.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-all font-bold text-xs shadow-md shadow-blue-600/20 cursor-pointer"
                   >
                     Add to List
                   </button>
@@ -450,7 +450,7 @@ export default function ProfilePage() {
                     key={idx}
                     className={`p-4 rounded-2xl border transition-all ${
                       editingIndex === idx
-                        ? "bg-slate-50 border-medical-blue-200"
+                        ? "bg-slate-50 border-blue-200"
                         : "bg-white border-slate-100 hover:border-slate-200 hover:shadow-sm"
                     }`}
                   >
@@ -462,7 +462,7 @@ export default function ProfilePage() {
                         <textarea
                           value={editingContent}
                           onChange={(e) => setEditingContent(e.target.value)}
-                          className="w-full min-h-[70px] p-2.5 border border-medical-blue-300 focus:border-medical-blue-500 rounded-xl text-xs outline-none font-semibold text-slate-800 bg-white resize-none"
+                          className="w-full min-h-[70px] p-2.5 border border-blue-300 focus:border-blue-500 rounded-xl text-xs outline-none font-semibold text-slate-800 bg-white resize-none"
                         />
                         <div className="flex justify-end gap-2">
                           <button
@@ -540,7 +540,7 @@ export default function ProfilePage() {
           <div className="flex items-start gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-200/50">
             <ShieldCheck
               size={18}
-              className="text-medical-blue-600 mt-0.5 flex-shrink-0"
+              className="text-blue-600 mt-0.5 flex-shrink-0"
             />
             <span className="text-xs text-slate-500 leading-normal">
               Pressing **Save Changes** updates your permanent profile. Make
@@ -553,7 +553,7 @@ export default function ProfilePage() {
             <button
               type="submit"
               disabled={saving}
-              className="px-6 h-12 bg-medical-blue-600 hover:bg-medical-blue-700 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-medical-blue-600/15 disabled:opacity-50 transition-all text-sm"
+              className="px-6 h-12 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-blue-600/25 disabled:opacity-50 transition-all text-sm cursor-pointer"
             >
               {saving ? (
                 <Loader2 className="w-4 h-4 animate-spin" />

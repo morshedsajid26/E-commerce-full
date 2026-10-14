@@ -106,8 +106,8 @@ const OTPInput = ({ length = 6, onComplete }) => {
             onChange={(e) => handleChange(e, index)}
             onKeyDown={(e) => handleKeyDown(e, index)}
             className={`w-11 h-14 sm:w-14 sm:h-16 text-center text-2xl font-bold border-2 rounded-2xl bg-white transition-all outline-none 
-              ${digit ? 'border-medical-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.1)]' : 'border-slate-200'} 
-              focus:border-medical-blue-500 focus:ring-4 focus:ring-medical-blue-500/10 text-slate-900`}
+              ${digit ? 'border-blue-500 shadow-[0_0_15px_rgba(37,99,235,0.15)]' : 'border-slate-200'} 
+              focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 text-slate-900`}
           />
         ))}
       </div>
@@ -115,7 +115,7 @@ const OTPInput = ({ length = 6, onComplete }) => {
         <motion.div 
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
-          className="mt-6 flex items-center gap-2 text-medical-blue-600 font-medium"
+          className="mt-6 flex items-center gap-2 text-blue-600 font-medium"
         >
           <Loader2 className="animate-spin w-5 h-5" />
           <span>Verifying code...</span>
@@ -128,8 +128,8 @@ const OTPInput = ({ length = 6, onComplete }) => {
     return (
       <div className="p-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
         <div className="mb-10 text-center">
-          <div className="w-16 h-16 bg-medical-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
-            <ShieldCheck className="text-medical-blue-600 w-10 h-10" />
+          <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+            <ShieldCheck className="text-blue-600 w-10 h-10" />
           </div>
           <h2 className="text-2xl font-black text-slate-900 tracking-tight">Verify Code</h2>
           <p className="text-slate-500 text-sm mt-2 max-w-[280px] mx-auto leading-relaxed">
@@ -142,7 +142,7 @@ const OTPInput = ({ length = 6, onComplete }) => {
         <div className="mt-10 space-y-4">
           <p className="text-center text-sm text-slate-500 font-medium">
             Didn't receive the code?{" "}
-            <button className="text-medical-blue-600 font-bold hover:underline">Resend OTP</button>
+            <button className="text-blue-600 font-bold hover:underline">Resend OTP</button>
           </p>
           <button 
             onClick={() => router.back()}

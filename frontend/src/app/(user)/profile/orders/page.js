@@ -38,7 +38,7 @@ function OrderDetailsModal({ order, onClose }) {
         <div className="flex items-center justify-between p-6 border-b border-slate-100 bg-slate-50/50">
           <div>
             <h3 className="font-extrabold text-slate-800 text-lg flex items-center gap-2">
-              <Package size={20} className="text-medical-blue-600" />
+              <Package size={20} className="text-blue-600" />
               Order Details
             </h3>
             <p className="text-sm font-semibold text-slate-500 font-mono mt-1">
@@ -68,7 +68,7 @@ function OrderDetailsModal({ order, onClose }) {
                       order.status === "APPROVED" ||
                       order.status === "SHIPPED" ||
                       order.status === "DELIVERED"
-                        ? "bg-medical-blue-600 border-medical-blue-100 text-white"
+                        ? "bg-blue-600 border-blue-100 text-white"
                         : "bg-white border-slate-200 text-slate-300"
                     }`}
                   >
@@ -91,7 +91,7 @@ function OrderDetailsModal({ order, onClose }) {
                       order.status === "APPROVED" ||
                       order.status === "SHIPPED" ||
                       order.status === "DELIVERED"
-                        ? "bg-medical-blue-600 border-medical-blue-100 text-white"
+                        ? "bg-blue-600 border-blue-100 text-white"
                         : "bg-white border-slate-200 text-slate-300"
                     }`}
                   >
@@ -107,7 +107,7 @@ function OrderDetailsModal({ order, onClose }) {
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center border-4 ${
                       order.status === "SHIPPED" || order.status === "DELIVERED"
-                        ? "bg-medical-blue-600 border-medical-blue-100 text-white"
+                        ? "bg-blue-600 border-blue-100 text-white"
                         : "bg-white border-slate-200 text-slate-300"
                     }`}
                   >
@@ -128,7 +128,7 @@ function OrderDetailsModal({ order, onClose }) {
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center border-4 ${
                       order.status === "DELIVERED"
-                        ? "bg-medical-blue-600 border-medical-blue-100 text-white"
+                        ? "bg-blue-600 border-blue-100 text-white"
                         : "bg-white border-slate-200 text-slate-300"
                     }`}
                   >
@@ -193,7 +193,7 @@ function OrderDetailsModal({ order, onClose }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-2">
               <div className="flex items-center gap-2 text-slate-500 mb-2">
-                <MapPin size={16} className="text-medical-blue-500" />
+                <MapPin size={16} className="text-blue-600" />
                 <span className="font-bold text-sm">Delivery Address</span>
               </div>
               <p className="text-xs font-semibold text-slate-700 leading-relaxed">
@@ -330,7 +330,7 @@ export default function CustomerOrdersPage() {
               : row.status === "SHIPPED"
                 ? "bg-blue-100 text-blue-700"
                 : row.status === "APPROVED"
-                  ? "bg-medical-blue-100 text-medical-blue-700"
+                  ? "bg-blue-50 text-blue-700 border border-blue-200"
                   : row.status === "CANCELLED" || row.status === "REJECTED"
                     ? "bg-rose-100 text-rose-700"
                     : "bg-yellow-100 text-yellow-700"
@@ -345,7 +345,7 @@ export default function CustomerOrdersPage() {
       key: "totalAmount",
       Title: "Total",
       render: (row) => (
-        <span className="font-black text-slate-900">
+        <span className="font-black text-slate-900 font-mono">
           ৳
           {Number(row.totalAmount).toLocaleString("en-IN", {
             minimumFractionDigits: 2,
@@ -360,7 +360,7 @@ export default function CustomerOrdersPage() {
       render: (row) => (
         <button
           onClick={() => setSelectedOrder(row)}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-medical-blue-50 hover:bg-medical-blue-100 text-medical-blue-700 text-xs font-bold rounded-lg transition-colors border border-medical-blue-100"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-600 text-xs font-bold rounded-lg transition-colors border border-blue-100 cursor-pointer"
         >
           <Eye size={14} />
           View
@@ -374,7 +374,7 @@ export default function CustomerOrdersPage() {
   if (loadingCustomer) {
     return (
       <div className="h-96 flex flex-col items-center justify-center font-sans">
-        <Loader2 className="w-10 h-10 animate-spin text-medical-blue-600 mb-2" />
+        <Loader2 className="w-10 h-10 animate-spin text-blue-600 mb-2" />
         <span className="text-slate-500 font-bold text-sm">
           Loading your orders portal...
         </span>
@@ -387,8 +387,8 @@ export default function CustomerOrdersPage() {
       <Toaster position="top-center" />
 
       <div className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-8 shadow-xl shadow-slate-100/50">
-        <div className="flex items-center gap-2.5 border-b border-slate-100 pb-6 mb-6">
-          <div className="w-12 h-12 rounded-2xl bg-medical-blue-50 text-medical-blue-600 flex items-center justify-center">
+        <div className="flex items-center gap-3 border-b border-slate-100 pb-6 mb-6">
+          <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 border border-blue-100 flex items-center justify-center">
             <ShoppingBag size={24} />
           </div>
           <div>
@@ -396,14 +396,14 @@ export default function CustomerOrdersPage() {
               Order History
             </h2>
             <p className="text-xs text-slate-400 mt-0.5">
-              Track your pending shipments and view full receipt details.
+              Track your pending hardware shipments and view official invoice receipts.
             </p>
           </div>
         </div>
 
         {loadingOrders ? (
           <div className="flex flex-col items-center justify-center py-16">
-            <Loader2 className="w-8 h-8 animate-spin text-medical-blue-600 mb-2" />
+            <Loader2 className="w-8 h-8 animate-spin text-blue-600 mb-2" />
             <span className="text-slate-400 text-xs font-bold">
               Retrieving order database...
             </span>
@@ -421,12 +421,11 @@ export default function CustomerOrdersPage() {
               No order history found
             </h3>
             <p className="text-slate-400 text-xs mt-1 max-w-[240px]">
-              You haven't placed any online orders yet. Visit the catalog and
-              build your cart!
+              You haven't placed any online orders yet. Visit our hardware catalog!
             </p>
             <Link
               href="/shop"
-              className="mt-6 px-6 py-2.5 rounded-xl bg-medical-blue-600 hover:bg-medical-blue-700 text-white font-bold text-xs transition-all shadow-md"
+              className="mt-6 px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition-all shadow-md shadow-blue-600/25"
             >
               Start Shopping
             </Link>

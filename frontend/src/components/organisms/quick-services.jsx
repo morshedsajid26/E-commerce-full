@@ -18,8 +18,8 @@ export function QuickServices() {
       desc: "Build Your Custom Rig",
       icon: Wrench,
       href: "/shop",
-      bgHover: "hover:border-red-500",
-      accent: "text-red-600 bg-red-50 dark:bg-red-950/40",
+      bgHover: "hover:border-blue-500",
+      accent: "text-blue-600 bg-blue-50 dark:bg-blue-950/40",
       tag: "Popular",
     },
     {

@@ -8,19 +8,19 @@ export function PcBuilderBanner() {
   return (
     <section className="py-8 bg-background">
       <div className="max-w-[96%] xl:max-w-[1600px] mx-auto px-4 sm:px-6">
-        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-slate-950 via-slate-900 to-red-950 border border-red-500/30 p-6 sm:p-10 text-white shadow-xl">
+        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 border border-blue-500/30 p-6 sm:p-10 text-white shadow-xl">
           {/* Background decoration */}
-          <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-red-600/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/90 text-white text-[11px] font-black uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/90 text-white text-[11px] font-black uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
                 <span>Gadget Land BD Signature Tool</span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-tight">
-                Build Your Custom <span className="text-red-500">Dream Gaming PC</span> in Minutes!
+                Build Your Custom <span className="text-blue-400">Dream Gaming PC</span> in Minutes!
               </h2>
 
               <p className="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
@@ -37,7 +37,7 @@ export function PcBuilderBanner() {
                   <span>Compatibility Check</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Wrench className="w-4 h-4 text-red-400 shrink-0" />
+                  <Wrench className="w-4 h-4 text-blue-400 shrink-0" />
                   <span>3-Yr Warranty Support</span>
                 </div>
               </div>
@@ -45,7 +45,7 @@ export function PcBuilderBanner() {
               <div className="pt-4 flex flex-wrap items-center gap-3">
                 <Link
                   href="/shop"
-                  className="px-6 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-red-600/30 flex items-center gap-2 transition-all hover:gap-3"
+                  className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-blue-600/30 flex items-center gap-2 transition-all hover:gap-3"
                 >
                   <Cpu className="w-4 h-4" />
                   <span>Start PC Builder Now</span>
@@ -66,7 +66,7 @@ export function PcBuilderBanner() {
               <div className="rounded-xl bg-slate-900/80 border border-white/10 p-5 backdrop-blur-md space-y-3">
                 <div className="flex justify-between items-center pb-2 border-b border-white/10 text-xs">
                   <span className="text-slate-400">Featured Configuration</span>
-                  <span className="text-red-400 font-bold">Tier: Extreme 4K</span>
+                  <span className="text-blue-400 font-bold">Tier: Extreme 4K</span>
                 </div>
                 <div className="space-y-2 text-xs">
                   <div className="flex justify-between">
@@ -75,7 +75,7 @@ export function PcBuilderBanner() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-400">Graphics:</span>
-                    <span className="font-bold text-red-400">RTX 4080 Super 16GB</span>
+                    <span className="font-bold text-blue-400">RTX 4080 Super 16GB</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-400">RAM:</span>
@@ -92,7 +92,7 @@ export function PcBuilderBanner() {
                 </div>
                 <div className="pt-2 border-t border-white/10 flex justify-between items-baseline">
                   <span className="text-xs text-slate-400">Estimated Total:</span>
-                  <span className="text-lg font-black text-red-500">৳ 2,89,500</span>
+                  <span className="text-lg font-black text-blue-400">৳ 2,89,500</span>
                 </div>
               </div>
             </div>

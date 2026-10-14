@@ -23,8 +23,8 @@ export function FeaturedCategories() {
       slug: "laptops",
       desc: "Gaming, Ultrabook, Mac",
       icon: Laptop,
-      color: "from-red-600/15 to-rose-500/5",
-      accent: "text-red-600",
+      color: "from-blue-600/15 to-indigo-500/5",
+      accent: "text-blue-600",
       count: "150+ Models",
     },
     {
@@ -86,8 +86,8 @@ export function FeaturedCategories() {
       slug: "gaming",
       desc: "Ergonomic, Racing Style",
       icon: Armchair,
-      color: "from-rose-600/15 to-rose-500/5",
-      accent: "text-rose-600",
+      color: "from-indigo-600/15 to-violet-500/5",
+      accent: "text-indigo-600",
       count: "30+ Models",
     },
   ];
@@ -98,7 +98,7 @@ export function FeaturedCategories() {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-6 pb-3 border-b border-border">
           <div className="flex items-center gap-2.5">
-            <div className="w-2.5 h-6 bg-red-600 rounded-xs" />
+            <div className="w-2.5 h-6 bg-blue-600 rounded-xs" />
             <div>
               <h2 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
                 Featured Hardware Categories
@@ -111,7 +111,7 @@ export function FeaturedCategories() {
 
           <Link
             href="/shop"
-            className="text-xs font-bold text-red-600 hover:text-red-700 flex items-center gap-1 group"
+            className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 group"
           >
             <span>View All Categories</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -126,21 +126,21 @@ export function FeaturedCategories() {
               <Link
                 key={cat.title}
                 href={`/category/${cat.slug}`}
-                className="group p-4 rounded-xl border border-border bg-card hover:border-red-500/60 hover:shadow-md transition-all duration-200 flex flex-col items-center text-center justify-between"
+                className="group p-4 rounded-xl border border-border bg-card hover:border-blue-500/60 hover:shadow-md transition-all duration-200 flex flex-col items-center text-center justify-between"
               >
                 <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-tr ${cat.color} ${cat.accent} flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-red-600 group-hover:text-white transition-all`}
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-tr ${cat.color} ${cat.accent} flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all`}
                 >
                   <Icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-xs sm:text-sm text-foreground group-hover:text-red-600 transition-colors line-clamp-1">
+                  <h3 className="font-extrabold text-xs sm:text-sm text-foreground group-hover:text-blue-600 transition-colors line-clamp-1">
                     {cat.title}
                   </h3>
                   <p className="text-[10px] text-muted-foreground mt-0.5 line-clamp-1">
                     {cat.desc}
                   </p>
-                  <span className="text-[10px] font-bold text-red-600/90 mt-2 block bg-red-50 dark:bg-red-950/40 py-0.5 px-2 rounded-full">
+                  <span className="text-[10px] font-bold text-blue-600/90 mt-2 block bg-blue-50 dark:bg-blue-950/40 py-0.5 px-2 rounded-full">
                     {cat.count}
                   </span>
                 </div>

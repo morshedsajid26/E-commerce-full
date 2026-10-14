@@ -111,17 +111,17 @@ export function FlashSale({ products = [] }) {
   };
 
   return (
-    <section className="py-8 bg-red-50/50 dark:bg-red-950/10 border-y border-red-200/60 dark:border-red-900/40">
+    <section className="py-8 bg-blue-50/50 dark:bg-blue-950/10 border-y border-blue-200/60 dark:border-blue-900/40">
       <div className="max-w-[96%] xl:max-w-[1600px] mx-auto px-4 sm:px-6">
         {/* Deal Header with Live Countdown Timer */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-red-200/80 dark:border-red-900/50">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-blue-200/80 dark:border-blue-900/50">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center font-bold shadow-md shadow-red-600/30 animate-pulse">
+            <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold shadow-md shadow-blue-600/30 animate-pulse">
               <Flame className="w-6 h-6 text-yellow-300" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-[10px] font-black uppercase tracking-wider text-red-600 bg-red-100 dark:bg-red-900/50 px-2 py-0.5 rounded">
+                <span className="text-[10px] font-black uppercase tracking-wider text-blue-600 bg-blue-100 dark:bg-blue-900/50 px-2 py-0.5 rounded">
                   Limited Time Offers
                 </span>
                 <span className="text-xs text-muted-foreground font-semibold hidden sm:inline">
@@ -140,22 +140,22 @@ export function FlashSale({ products = [] }) {
               Offer Ends In:
             </span>
             <div className="flex items-center gap-1.5">
-              <div className="flex items-center gap-1 bg-card border border-red-200 dark:border-red-900 px-2.5 py-1.5 rounded-lg shadow-xs">
-                <span className="text-sm font-black text-red-600">
+              <div className="flex items-center gap-1 bg-card border border-blue-200 dark:border-blue-900 px-2.5 py-1.5 rounded-lg shadow-xs">
+                <span className="text-sm font-black text-blue-600">
                   {String(timeLeft.hours).padStart(2, "0")}
                 </span>
                 <span className="text-[10px] text-muted-foreground font-bold">H</span>
               </div>
-              <span className="font-bold text-red-600">:</span>
-              <div className="flex items-center gap-1 bg-card border border-red-200 dark:border-red-900 px-2.5 py-1.5 rounded-lg shadow-xs">
-                <span className="text-sm font-black text-red-600">
+              <span className="font-bold text-blue-600">:</span>
+              <div className="flex items-center gap-1 bg-card border border-blue-200 dark:border-blue-900 px-2.5 py-1.5 rounded-lg shadow-xs">
+                <span className="text-sm font-black text-blue-600">
                   {String(timeLeft.minutes).padStart(2, "0")}
                 </span>
                 <span className="text-[10px] text-muted-foreground font-bold">M</span>
               </div>
-              <span className="font-bold text-red-600">:</span>
-              <div className="flex items-center gap-1 bg-card border border-red-200 dark:border-red-900 px-2.5 py-1.5 rounded-lg shadow-xs">
-                <span className="text-sm font-black text-red-600">
+              <span className="font-bold text-blue-600">:</span>
+              <div className="flex items-center gap-1 bg-card border border-blue-200 dark:border-blue-900 px-2.5 py-1.5 rounded-lg shadow-xs">
+                <span className="text-sm font-black text-blue-600">
                   {String(timeLeft.seconds).padStart(2, "0")}
                 </span>
                 <span className="text-[10px] text-muted-foreground font-bold">S</span>
@@ -173,11 +173,11 @@ export function FlashSale({ products = [] }) {
             return (
               <div
                 key={deal.id}
-                className="group rounded-xl border border-border bg-card p-4 hover:border-red-500/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-between relative overflow-hidden"
+                className="group rounded-xl border border-border bg-card p-4 hover:border-blue-500/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-between relative overflow-hidden"
               >
                 {/* Discount Badge */}
                 <div className="absolute top-3 left-3 z-10">
-                  <span className="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded shadow-xs uppercase">
+                  <span className="bg-blue-600 text-white text-[10px] font-black px-2 py-0.5 rounded shadow-xs uppercase">
                     Save {deal.discount}%
                   </span>
                 </div>
@@ -201,7 +201,7 @@ export function FlashSale({ products = [] }) {
                 {/* Content */}
                 <div className="mt-3 space-y-2 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-black text-xs sm:text-sm text-foreground line-clamp-2 group-hover:text-red-600 transition-colors leading-snug">
+                    <h3 className="font-black text-xs sm:text-sm text-foreground line-clamp-2 group-hover:text-blue-600 transition-colors leading-snug">
                       {deal.title}
                     </h3>
 
@@ -209,7 +209,7 @@ export function FlashSale({ products = [] }) {
                     <ul className="mt-2 space-y-1 text-[11px] text-muted-foreground">
                       {deal.specs?.slice(0, 3).map((spec, i) => (
                         <li key={i} className="flex items-center gap-1.5 line-clamp-1">
-                          <span className="w-1 h-1 rounded-full bg-red-600 shrink-0" />
+                          <span className="w-1 h-1 rounded-full bg-blue-600 shrink-0" />
                           <span>{spec}</span>
                         </li>
                       ))}
@@ -220,11 +220,11 @@ export function FlashSale({ products = [] }) {
                   <div className="pt-2">
                     <div className="flex justify-between text-[10px] font-bold text-muted-foreground mb-1">
                       <span>Available: {stockRemaining} units</span>
-                      <span className="text-red-600 font-extrabold">{percentage}% Sold</span>
+                      <span className="text-blue-600 font-extrabold">{percentage}% Sold</span>
                     </div>
                     <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-red-600 rounded-full"
+                        className="h-full bg-blue-600 rounded-full"
                         style={{ width: `${percentage}%` }}
                       />
                     </div>
@@ -236,7 +236,7 @@ export function FlashSale({ products = [] }) {
                       <span className="text-[10px] text-muted-foreground block line-through">
                         ৳ {deal.oldPrice?.toLocaleString()}
                       </span>
-                      <span className="text-base sm:text-lg font-black text-red-600">
+                      <span className="text-base sm:text-lg font-black text-blue-600">
                         ৳ {deal.price?.toLocaleString()}
                       </span>
                     </div>
@@ -244,7 +244,7 @@ export function FlashSale({ products = [] }) {
                     <button
                       type="button"
                       onClick={(e) => handleAddToCart(deal, e)}
-                      className="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold flex items-center gap-1 shadow-xs transition-colors cursor-pointer"
+                      className="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-1 shadow-xs transition-colors cursor-pointer"
                     >
                       <ShoppingBag className="w-3.5 h-3.5" />
                       <span>Buy Now</span>

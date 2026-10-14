@@ -24,7 +24,7 @@ const activeOffers = [
     title: "First Purchase Discount",
     description: "Welcome to Gadget Land BD! Enjoy a flat 10% discount on your first order. Minimum cart value ৳5,000.",
     code: "WELCOME10",
-    color: "from-medical-blue-500 to-blue-700",
+    color: "from-blue-600 to-indigo-700",
     icon: Gift,
     expiry: "Valid Forever"
   },
@@ -115,7 +115,7 @@ export default function OffersPage() {
           <div className="mt-20 relative rounded-3xl overflow-hidden bg-zinc-950 p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 border border-zinc-800 shadow-2xl animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-20 mix-blend-overlay" />
             <div className="relative z-10 max-w-xl text-center md:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xs uppercase tracking-wider mb-6 border border-rose-500/30">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-500/30">
                 <Flame size={14} className="animate-pulse" /> Flash Sale Ending Soon
               </div>
               <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-4">

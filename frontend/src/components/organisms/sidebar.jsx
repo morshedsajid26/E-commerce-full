@@ -85,7 +85,7 @@ export function Sidebar() {
           <Link
             href="/shop"
             onClick={() => setSidebarOpen(false)}
-            className="flex items-center justify-center gap-1.5 py-2 px-3 rounded bg-red-600 text-white shadow-xs"
+            className="flex items-center justify-center gap-1.5 py-2 px-3 rounded bg-blue-600 text-white shadow-xs"
           >
             <Cpu className="w-3.5 h-3.5" />
             <span>PC Builder</span>
@@ -137,13 +137,13 @@ export function Sidebar() {
                 </div>
 
                 {isExpanded && megaData && (
-                  <div className="bg-muted/40 px-3 py-2 space-y-1.5 border-l-2 border-red-600 ml-3 my-1">
+                  <div className="bg-muted/40 px-3 py-2 space-y-1.5 border-l-2 border-blue-600 ml-3 my-1">
                     {megaData.columns.flatMap((col) => col.items).slice(0, 8).map((sub, idx) => (
                       <Link
                         key={idx}
                         href={sub.href}
                         onClick={() => setSidebarOpen(false)}
-                        className="block text-[11px] text-muted-foreground hover:text-red-600 py-0.5"
+                        className="block text-[11px] text-muted-foreground hover:text-blue-600 py-0.5"
                       >
                         {sub.label}
                       </Link>
@@ -164,7 +164,7 @@ export function Sidebar() {
                 onClick={() => setSidebarOpen(false)}
                 className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-xs font-bold bg-background border border-border hover:bg-accent transition-colors"
               >
-                <User className="h-4 w-4 text-red-600" />
+                <User className="h-4 w-4 text-blue-600" />
                 <span className="truncate flex-1">{user.name || "My Account"}</span>
               </Link>
               <button
@@ -191,7 +191,7 @@ export function Sidebar() {
               <Link
                 href="/register"
                 onClick={() => setSidebarOpen(false)}
-                className="flex items-center justify-center py-2 px-3 rounded-lg text-xs font-bold bg-red-600 text-white hover:bg-red-700 transition-colors text-center"
+                className="flex items-center justify-center py-2 px-3 rounded-lg text-xs font-bold bg-blue-600 text-white hover:bg-blue-700 transition-colors text-center"
               >
                 Sign Up
               </Link>

@@ -28,7 +28,7 @@ export function Footer() {
           {/* Brand Info & Support */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-rose-700 text-white flex items-center justify-center font-black text-2xl shadow-md shadow-red-600/30">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white flex items-center justify-center font-black text-2xl shadow-md shadow-blue-600/30">
                 G
               </div>
               <div className="flex flex-col">
@@ -36,7 +36,7 @@ export function Footer() {
                   <span className="font-black text-2xl tracking-tighter text-white">
                     GADGETLAND
                   </span>
-                  <span className="text-red-500 font-black text-2xl tracking-tight ml-0.5">
+                  <span className="text-blue-500 font-black text-2xl tracking-tight ml-0.5">
                     BD
                   </span>
                 </div>
@@ -53,7 +53,7 @@ export function Footer() {
             {/* Helpline and Hours */}
             <div className="space-y-2 text-xs text-slate-300 pt-1">
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-red-500 shrink-0" />
+                <Phone className="w-4 h-4 text-blue-500 shrink-0" />
                 <span className="font-bold text-white">Hotline: 01708-454850, 09604-454850</span>
               </div>
               <div className="flex items-center gap-2.5">
@@ -72,7 +72,7 @@ export function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:bg-red-600 hover:text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
@@ -81,7 +81,7 @@ export function Footer() {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:bg-red-600 hover:text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube className="w-4 h-4" />
@@ -90,7 +90,7 @@ export function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:bg-red-600 hover:text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -101,7 +101,7 @@ export function Footer() {
           {/* Showroom Outlets */}
           <div>
             <h4 className="font-extrabold text-white text-xs uppercase tracking-wider mb-3.5 flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-red-500" /> Showroom Outlets
+              <MapPin className="w-3.5 h-3.5 text-blue-500" /> Showroom Outlets
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-400">
               <li>
@@ -130,33 +130,33 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
-                <Link href="/shop" className="hover:text-red-400 transition-colors flex items-center gap-1.5">
-                  <Cpu className="w-3 h-3 text-red-500" />
+                <Link href="/shop" className="hover:text-blue-400 transition-colors flex items-center gap-1.5">
+                  <Cpu className="w-3 h-3 text-blue-500" />
                   <span>Online PC Builder</span>
                 </Link>
               </li>
               <li>
-                <Link href="/category/laptops" className="hover:text-red-400 transition-colors">
+                <Link href="/category/laptops" className="hover:text-blue-400 transition-colors">
                   Laptop & Notebooks
                 </Link>
               </li>
               <li>
-                <Link href="/category/components" className="hover:text-red-400 transition-colors">
+                <Link href="/category/components" className="hover:text-blue-400 transition-colors">
                   Desktop Components
                 </Link>
               </li>
               <li>
-                <Link href="/category/monitors" className="hover:text-red-400 transition-colors">
+                <Link href="/category/monitors" className="hover:text-blue-400 transition-colors">
                   Gaming Monitors
                 </Link>
               </li>
               <li>
-                <Link href="/offers" className="hover:text-red-400 transition-colors">
+                <Link href="/offers" className="hover:text-blue-400 transition-colors">
                   Special Offer Deals
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="hover:text-red-400 transition-colors">
+                <Link href="/shop" className="hover:text-blue-400 transition-colors">
                   Pre-Built Gaming PC
                 </Link>
               </li>
@@ -170,32 +170,32 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
-                <Link href="/shop" className="hover:text-red-400 transition-colors">
+                <Link href="/shop" className="hover:text-blue-400 transition-colors">
                   Official Warranty Policy
                 </Link>
               </li>
               <li>
-                <Link href="/offers" className="hover:text-red-400 transition-colors">
+                <Link href="/offers" className="hover:text-blue-400 transition-colors">
                   0% EMI Facilities
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="hover:text-red-400 transition-colors">
+                <Link href="/shop" className="hover:text-blue-400 transition-colors">
                   Order Tracking
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="hover:text-red-400 transition-colors">
+                <Link href="/shop" className="hover:text-blue-400 transition-colors">
                   Return & Refund Terms
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-red-400 transition-colors">
+                <Link href="/blog" className="hover:text-blue-400 transition-colors">
                   Tech News & Reviews
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="hover:text-red-400 transition-colors">
+                <Link href="/shop" className="hover:text-blue-400 transition-colors">
                   Corporate Sales Contact
                 </Link>
               </li>
@@ -206,7 +206,7 @@ export function Footer() {
         {/* Accepted Payment Methods & Security */}
         <div className="py-6 flex flex-col md:flex-row items-center justify-between gap-4 border-b border-white/10 text-xs">
           <div className="flex items-center gap-2 text-slate-400">
-            <CreditCard className="w-4 h-4 text-red-500" />
+            <CreditCard className="w-4 h-4 text-blue-500" />
             <span className="font-bold text-slate-200">Payment Methods Accepted:</span>
             <span className="text-slate-400">bKash | Nagad | Rocket | Visa | MasterCard | AMEX | COD</span>
           </div>

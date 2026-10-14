@@ -14,10 +14,10 @@ export function TickerNotice() {
   ];
 
   return (
-    <div className="bg-red-600 text-white py-2 px-4 shadow-xs">
+    <div className="bg-blue-600 text-white py-2 px-4 shadow-xs">
       <div className="max-w-[96%] xl:max-w-[1600px] mx-auto flex items-center gap-3">
         {/* Notice Badge */}
-        <div className="shrink-0 flex items-center gap-1.5 bg-red-800/80 px-2.5 py-1 rounded text-[11px] font-black uppercase tracking-wider">
+        <div className="shrink-0 flex items-center gap-1.5 bg-blue-800/80 px-2.5 py-1 rounded text-[11px] font-black uppercase tracking-wider">
           <Megaphone className="w-3.5 h-3.5 text-yellow-300 animate-bounce" />
           <span>বিজ্ঞপ্তি / Updates</span>
         </div>
@@ -28,7 +28,7 @@ export function TickerNotice() {
             {notices.map((notice, idx) => (
               <span key={idx} className="mx-6 inline-flex items-center gap-2">
                 <span>{notice}</span>
-                <span className="text-red-300">•</span>
+                <span className="text-blue-200">•</span>
               </span>
             ))}
           </div>
@@ -37,7 +37,7 @@ export function TickerNotice() {
         {/* Quick Offer CTA Link */}
         <Link
           href="/offers"
-          className="hidden sm:inline-flex items-center gap-1 shrink-0 text-xs font-bold bg-white text-red-600 px-3 py-1 rounded hover:bg-red-50 transition-colors"
+          className="hidden sm:inline-flex items-center gap-1 shrink-0 text-xs font-bold bg-white text-blue-600 px-3 py-1 rounded hover:bg-blue-50 transition-colors"
         >
           <span>সকল অফার দেখুন</span>
           <ArrowRight className="w-3.5 h-3.5" />

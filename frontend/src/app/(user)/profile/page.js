@@ -72,8 +72,8 @@ export default function CustomerOverviewPage() {
   if (loading) {
     return (
       <div className="h-96 w-full flex flex-col items-center justify-center gap-4 text-slate-400">
-        <Loader2 className="w-10 h-10 animate-spin text-medical-blue-600" />
-        <p className="font-medium animate-pulse">Loading your dashboard...</p>
+        <Loader2 className="w-10 h-10 animate-spin text-blue-600" />
+        <p className="font-medium animate-pulse text-sm">Loading your dashboard...</p>
       </div>
     );
   }
@@ -103,14 +103,28 @@ export default function CustomerOverviewPage() {
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
-      {/* Welcome Message */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-black text-slate-900 tracking-tight">
-          Welcome back, {user?.name?.split(" ")[0] || "User"}! 👋
-        </h1>
-        <p className="text-sm text-slate-500 mt-1">
-          Here is an overview of your account activity.
-        </p>
+      {/* Welcome Message Banner */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-white dark:bg-[#0b1320] rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
+        <div>
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 text-[11px] font-black uppercase tracking-wider mb-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-ping" />
+            <span>GadgetLand BD Member</span>
+          </div>
+          <h1 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">
+            Welcome back, {user?.name?.split(" ")[0] || "User"}! 👋
+          </h1>
+          <p className="text-xs sm:text-sm text-slate-500 mt-1">
+            Track your high-performance hardware orders & delivery addresses.
+          </p>
+        </div>
+
+        <Link
+          href="/shop"
+          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase tracking-wider shadow-md shadow-blue-600/25 transition-all self-start sm:self-auto"
+        >
+          <ShoppingBag size={14} />
+          <span>Browse Store</span>
+        </Link>
       </div>
 
       {/* Summary Cards */}
@@ -119,8 +133,8 @@ export default function CustomerOverviewPage() {
           title="Total Orders"
           value={totalOrders}
           icon={ShoppingBag}
-          gradientFrom="from-sky-400"
-          gradientTo="to-medical-blue-600"
+          gradientFrom="from-blue-500"
+          gradientTo="to-indigo-600"
         />
         <SummaryCard
           title="Active Orders"
@@ -141,8 +155,8 @@ export default function CustomerOverviewPage() {
           title="Saved Addresses"
           value={savedAddressesCount}
           icon={MapPin}
-          gradientFrom="from-indigo-400"
-          gradientTo="to-violet-600"
+          gradientFrom="from-slate-800"
+          gradientTo="to-[#0b1320]"
         />
       </div>
 
@@ -150,7 +164,7 @@ export default function CustomerOverviewPage() {
       <div className="bg-white rounded-2xl border border-slate-100 p-6 shadow-xl shadow-slate-100/50">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
               <Package size={20} />
             </div>
             <div>
@@ -158,13 +172,13 @@ export default function CustomerOverviewPage() {
                 Recent Orders
               </h2>
               <p className="text-xs text-slate-500">
-                Your most recent purchases
+                Your latest purchases with official warranty
               </p>
             </div>
           </div>
           <Link
             href="/profile/orders"
-            className="text-xs font-bold text-medical-blue-600 hover:text-medical-blue-700 flex items-center gap-1 bg-medical-blue-50 px-3 py-1.5 rounded-lg transition-colors"
+            className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 bg-blue-50 hover:bg-blue-100 border border-blue-100 px-3 py-1.5 rounded-lg transition-colors"
           >
             View All
             <ArrowRight size={14} />
@@ -180,7 +194,7 @@ export default function CustomerOverviewPage() {
             </p>
             <Link
               href="/shop"
-              className="mt-4 inline-flex items-center justify-center px-4 py-2 bg-medical-blue-600 text-white rounded-lg text-xs font-bold hover:bg-medical-blue-700 transition-colors"
+              className="mt-4 inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-bold hover:bg-blue-700 transition-colors shadow-md shadow-blue-600/20"
             >
               Start Shopping
             </Link>

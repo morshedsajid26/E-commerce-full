@@ -34,7 +34,7 @@ const Password = ({
           onChange={onChange}
           placeholder={placeholder}
           readOnly={readonly}
-          className={`w-full bg-white border border-slate-200 outline-none p-3 text-slate-900 placeholder:text-slate-400 rounded-lg transition-all focus:border-medical-blue-500 focus:ring-2 focus:ring-medical-blue-500/20 ${inputClass}`}
+          className={`w-full bg-white border border-slate-200 outline-none p-3 text-slate-900 placeholder:text-slate-400 rounded-lg transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 ${inputClass}`}
           aria-label={label || "password"}
           autoComplete={name === "password" ? "new-password" : "off"}
           {...props}
@@ -46,7 +46,7 @@ const Password = ({
             onClick={() => setShowPass((s) => !s)}
             aria-pressed={showPass}
             aria-label={showPass ? "Hide password" : "Show password"}
-            className={`w-8 h-8 flex items-center justify-center absolute top-1/2 -translate-y-1/2 right-2 text-slate-400 hover:text-medical-blue-600 transition-colors ${icon}`}
+            className={`w-8 h-8 flex items-center justify-center absolute top-1/2 -translate-y-1/2 right-2 text-slate-400 hover:text-blue-600 transition-colors ${icon}`}
           >
             {showPass ? <IoEyeOutline className="w-5 h-5" /> : <FaRegEyeSlash className="w-5 h-5" />}
           </button>

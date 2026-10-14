@@ -37,6 +37,26 @@
   
   --shadow-premium: 0 10px 40px -10px rgba(0,0,0,0.08);
 
+  /* TechLand / GadgetLand Theme Palette */
+  --color-tech-navy-950: #070d17;
+  --color-tech-navy-900: #0b1320;
+  --color-tech-navy-800: #142033;
+  --color-tech-navy-700: #1b263b;
+  --color-tech-navy-600: #23354f;
+
+  /* Modern Tech Blue / Electric Blue Palette */
+  --color-tech-blue-50: #eff6ff;
+  --color-tech-blue-100: #dbeafe;
+  --color-tech-blue-200: #bfdbfe;
+  --color-tech-blue-300: #93c5fd;
+  --color-tech-blue-400: #60a5fa;
+  --color-tech-blue-500: #3b82f6;
+  --color-tech-blue-600: #2563eb;
+  --color-tech-blue-700: #1d4ed8;
+  --color-tech-blue-800: #1e40af;
+  --color-tech-blue-900: #1e3a8a;
+
+  /* Aliased for full backwards compatibility with components */
   --color-medical-blue-50: #eff6ff;
   --color-medical-blue-100: #dbeafe;
   --color-medical-blue-200: #bfdbfe;
@@ -67,8 +87,8 @@
   --card-foreground: oklch(0.15 0.02 260);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0.02 260);
-  /* TechLand Signature Red */
-  --primary: oklch(0.55 0.22 25);
+  /* Electric Tech Blue Signature */
+  --primary: oklch(0.55 0.22 260);
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.96 0.01 260);
   --secondary-foreground: oklch(0.2 0.05 260);
@@ -80,7 +100,7 @@
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.9 0.02 260);
   --input: oklch(0.9 0.02 260);
-  --ring: oklch(0.55 0.22 25);
+  --ring: oklch(0.55 0.22 260);
   --radius: 0.375rem;
 }
 
@@ -91,7 +111,7 @@
   --card-foreground: oklch(0.98 0 0);
   --popover: oklch(0.18 0.02 260);
   --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.62 0.23 25);
+  --primary: oklch(0.62 0.23 260);
   --primary-foreground: oklch(0.98 0 0);
   --secondary: oklch(0.25 0.03 260);
   --secondary-foreground: oklch(0.98 0 0);
@@ -103,7 +123,7 @@
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.25 0.03 260);
   --input: oklch(0.25 0.03 260);
-  --ring: oklch(0.62 0.23 25);
+  --ring: oklch(0.62 0.23 260);
 }
 
 @layer base {

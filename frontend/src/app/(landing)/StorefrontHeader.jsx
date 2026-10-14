@@ -48,16 +48,13 @@ export default function StorefrontHeader({
           href="/"
           className="flex items-center gap-2 sm:gap-3 shrink-0 hover:opacity-90 transition-opacity"
         >
-          <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-medical-blue-600 to-medical-blue-500 flex items-center justify-center shadow-lg shadow-medical-blue-500/25">
+          <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-500/25">
             <Cpu className="text-white w-5 h-5 sm:w-7 sm:h-7" />
           </div>
           <div>
             <div className="flex items-center gap-1 sm:gap-1.5">
               <h1 className="text-lg sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight leading-none hidden sm:block">
-                GADGETS{" "}
-                <span className="text-medical-blue-600 dark:text-medical-blue-400">
-                  BD
-                </span>
+                GADGET<span className="text-blue-600 dark:text-blue-400">LAND</span>
               </h1>
               <span
                 className="flex h-1.5 w-1.5 sm:h-2 sm:w-2 relative"
@@ -73,13 +70,13 @@ export default function StorefrontHeader({
         {/* Search Bar */}
         <div className="flex-1 max-w-2xl mx-1 sm:mx-4">
           <div className="relative group w-full">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4 sm:w-5 sm:h-5 group-focus-within:text-medical-blue-600 transition-colors" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4 sm:w-5 sm:h-5 group-focus-within:text-blue-600 transition-colors" />
             <input
               type="text"
-              placeholder="Search medicines, categories, brands..."
+              placeholder="Search components, laptops, monitors..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full h-9 sm:h-12 pl-9 sm:pl-11 pr-9 sm:pr-11 rounded-xl sm:rounded-2xl bg-slate-50 text-slate-800 placeholder-slate-400 font-medium text-xs sm:text-sm border border-slate-200/60 focus:border-medical-blue-400 focus:bg-white focus:ring-2 focus:ring-medical-blue-500/10 transition-all outline-none shadow-inner dark:bg-slate-800 dark:text-white dark:border-slate-700 dark:placeholder-slate-500 dark:focus:bg-slate-800"
+              className="w-full h-9 sm:h-12 pl-9 sm:pl-11 pr-9 sm:pr-11 rounded-xl sm:rounded-2xl bg-slate-50 text-slate-800 placeholder-slate-400 font-medium text-xs sm:text-sm border border-slate-200/60 focus:border-blue-400 focus:bg-white focus:ring-2 focus:ring-blue-500/10 transition-all outline-none shadow-inner dark:bg-slate-800 dark:text-white dark:border-slate-700 dark:placeholder-slate-500 dark:focus:bg-slate-800"
             />
             {searchQuery && (
               <button
@@ -99,8 +96,8 @@ export default function StorefrontHeader({
 
           <Link
             href="/shop"
-            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-slate-600 hover:bg-slate-100 hover:text-medical-blue-600 font-bold text-xs sm:text-sm transition-all cursor-pointer dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-medical-blue-400"
-            title="Shop Medicines"
+            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-slate-600 hover:bg-slate-100 hover:text-blue-600 font-bold text-xs sm:text-sm transition-all cursor-pointer dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400"
+            title="Shop Hardware"
           >
             <ShoppingBag size={16} className="w-4 h-4" />
             <span className="hidden lg:inline">Shop</span>
