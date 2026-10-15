@@ -8,7 +8,6 @@ import { CartDrawer } from "@/components/organisms/cart-drawer";
 import { WishlistDrawer } from "@/components/organisms/wishlist-drawer";
 import { SearchModal } from "@/components/organisms/search-modal";
 import { BackToTop } from "@/components/molecules/back-to-top";
-import { TickerNotice } from "@/components/organisms/ticker-notice";
 import { HeroSection } from "@/components/organisms/hero/hero-section";
 import { QuickServices } from "@/components/organisms/quick-services";
 import { FeaturedCategories } from "@/components/organisms/featured-categories";
@@ -106,9 +105,6 @@ export default async function Home() {
 
       {/* Main Page Content - accounting for top fixed header height */}
       <main className="flex-1 pt-14 sm:pt-16 lg:pt-24">
-        {/* Gadget Land BD News Ticker / Marquee Updates */}
-        <TickerNotice />
-
         {/* Gadget Land BD 3-Column Hero Section */}
         <HeroSection />
 
